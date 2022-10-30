@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const menuItem = (
     <>
       <Link to="/" className="mr-4 text-lg">
@@ -48,6 +50,7 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItem}</ul>
       </div>
       <div className="navbar-end">
+        <span className="mr-5">{user?.uid && user?.email}</span>
         <button className="btn btn-primary btn-outline">Appointment</button>
       </div>
     </div>
