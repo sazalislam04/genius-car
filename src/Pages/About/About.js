@@ -5,12 +5,17 @@ import person from "../../assets/images/about_us/person.jpg";
 const About = () => {
   return (
     <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row gap-10">
-        <div className="w-1/2">
-          <img src={person} className="max-w-sm rounded-lg shadow-2xl" alt="" />
-          <img src={parts} className="max-w-sm rounded-lg shadow-2xl" alt="" />
+      <div className="hero-content flex-col lg:flex-row">
+        <div className="w-full lg:w-1/2 relative">
+          <img src={person} className="max-w-lg rounded-lg shadow-2xl" alt="" />
+          <img
+            src={parts}
+            className="max-w-sm absolute top-1/2 right-5 rounded-lg shadow-2xl"
+            alt=""
+          />
         </div>
-        <div className="1/2 ml-20">
+        <div className="w-full lg:w-1/2">
+          <h2 className="mb-5 text-2xl text-orange-500 font-bold">About us</h2>
           <h1 className="text-5xl font-bold">
             We are qualified & of experience in this field
           </h1>
