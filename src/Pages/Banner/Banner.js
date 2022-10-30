@@ -49,7 +49,7 @@ const bannerItem = [
 
 const Banner = () => {
   return (
-    <div className="carousel w-full lg:h-[550px] rounded-xl lg:overflow-hidden">
+    <div className="carousel w-full lg:h-[550px] rounded-xl overflow-hidden">
       {bannerItem.map((slider) => (
         <SliderItem key={slider.id} slider={slider} />
       ))}
