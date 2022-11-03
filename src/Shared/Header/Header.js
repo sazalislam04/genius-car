@@ -10,9 +10,15 @@ const Header = () => {
       <Link to="/" className="mr-4 text-lg">
         Home
       </Link>
-      <Link to="/login" className="text-lg">
-        Login
-      </Link>
+      {user?.email ? (
+        <Link to="/orders" className="mr-4 text-lg">
+          Orders
+        </Link>
+      ) : (
+        <Link to="/login" className="text-lg">
+          Login
+        </Link>
+      )}
     </>
   );
   return (
