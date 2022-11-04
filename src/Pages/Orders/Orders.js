@@ -7,7 +7,7 @@ const Orders = () => {
   const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user.email}`, {
+    fetch(`https://genius-car-dbserver.vercel.app/orders?email=${user.email}`, {
       headers: {
         authorization: `Bearar ${localStorage.getItem("genius-token")}`,
       },
@@ -28,7 +28,7 @@ const Orders = () => {
       `Are you sure, you want to cancel this order`
     );
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://genius-car-dbserver.vercel.app/orders/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -44,7 +44,7 @@ const Orders = () => {
   };
 
   const handleUpdated = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://genius-car-dbserver.vercel.app/orders/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
